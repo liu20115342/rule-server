@@ -1,3 +1,27 @@
 <%- include('layout/header', { title: 'test'})%>
-123
+<button id="build">点击构建</button>
+<ul id="list">
+
+</ul>
+<script>
+    $(function() {
+        var ulDom = $('#list')
+        function updateList(item) {
+            ulDom.append(`<li>${item.url}</li>`)
+        }
+        function build() {
+            $.ajax({
+                method: 'POST',
+                url: '/api/build',
+                success: function(res) {
+                    if(res && res.success) {
+                        var data = res.data
+                        data.forEach(updateList);
+                    }
+                }
+            })
+        }
+        $('#build').on('click', build)
+    })
+</script>
 <%- include('layout/footer') %>

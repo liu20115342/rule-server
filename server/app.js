@@ -5,8 +5,9 @@ const json = require('koa-json')
 const views = require('koa-views')
 const ip = require('ip')
 const logger = require('koa-logger')
-
+const { port } = require('./config/env')
 const indexViewRoute = require('./routes/view/index')
+const buildApiRoute = require('./routes/api/ build')
 const app = new Koa()
 
 app.use(bodyparser({
@@ -21,7 +22,8 @@ app.use(views(__dirname + '/views', {
   extension: 'ejs'
 }))
 app.use(indexViewRoute.routes(), indexViewRoute.allowedMethods())
+app.use(buildApiRoute.routes(), buildApiRoute.allowedMethods())
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("服务已启动：", `http://${ip.address()}:${3000}`)
 })
