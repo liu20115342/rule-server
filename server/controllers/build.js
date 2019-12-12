@@ -1,11 +1,12 @@
 const { spawn } = require('child_process')
 const { artifacts } =require('../../surgio.conf')
 const ip = require('ip')
-const { port } = require('../config/env')
+const { port, domain } = require('../config/env')
 function _formatList(item) {
     let fileName = item.name
+    let host = domain || `http://${ip.address()}:${port}`
     return {
-        url: `${ip.address()}:${port}/${fileName}`,
+        url: `${host}/${fileName}`,
         name: fileName
     }
 }
@@ -18,7 +19,6 @@ function build() {
         
         sh.stderr.on('data', (data) => {
             console.error(`stderr: ${data}`);
-            // reject(data)
         });
         
         sh.on('close', (code) => {

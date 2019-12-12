@@ -1,6 +1,10 @@
 'use strict';
-
+const V2RAY_URL = process.env.V2RAY_URL
 module.exports = {
-  url: 'https://raw.githubusercontent.com/geekdada/surgio/master/test/asset/test-v2rayn-sub.txt',
+  url: V2RAY_URL,
   type: 'v2rayn_subscribe',
+  // 定义所有的节点都支持 udpRelay
+  udpRelay: true,
+  // 添加国旗 emoji
+  addFlag: true,
 };

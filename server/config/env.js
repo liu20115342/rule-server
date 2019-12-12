@@ -1,3 +1,4 @@
 module.exports = {
-    port: process.env.POST || 3000
+    port: process.env.PORT || 3000,
+    domain: process.env.DOMAIN
 }

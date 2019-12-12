@@ -10,6 +10,7 @@
             ulDom.append(`<li>${item.url}</li>`)
         }
         function build() {
+            ulDom.html('')
             $.ajax({
                 method: 'POST',
                 url: '/api/build',

@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "update": "surgio generate",
-    "serve": "node server/app.js",
-    "start": "nodemon --inspect server/app.js"
+    "serve": "node server/index.js",
+    "start": "nodemon --inspect server/index.js"
   },
   "dependencies": {
     "bootstrap": "^4.4.1",
+    "dotenv": "^8.2.0",
     "ejs": "^3.0.1",
     "ip": "^1.1.5",
     "koa": "^2.11.0",
