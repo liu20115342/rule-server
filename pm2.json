@@ -1,0 +1,7 @@
+{
+  "apps": [{
+    "name": "rule-server",
+    "script": "./server/index.js",
+    "watch": false
+  }]
+}

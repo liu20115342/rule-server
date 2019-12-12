@@ -53,7 +53,7 @@ PORT=4000
 # 本地启动调试
 npm start
 # vps上静默启动
-pm2 start pm2.js
+pm2 start pm2.json
 
 # 其实项目暂时没区分环境
 ```
