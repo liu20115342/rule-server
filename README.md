@@ -36,7 +36,7 @@ npm install # 如果安装慢可以使用npm淘宝源 或 cnpm
 ```
 #### 环境变量说明
 
-拷贝`.env.template`文件为`.env`
+拷贝`.env.template`文件为`.env` 
 ```
 
 # v2ray订阅地址 具体配置自行修改 因为我只用到了v2ray，所以只配置了这个
